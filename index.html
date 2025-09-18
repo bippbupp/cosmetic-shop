@@ -4,23 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PinkApple - Магазин косметики</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div>
-            <h1>PinkApple</h1>
-            <nav>
+    <header class="header">
+        <div class="container">
+            <div class="logo">PinkApple</div>
+            <nav class="nav">
                 <a href="index.html">Главная</a>
-                <a href="cart.html">Корзина</a>
+                <a href="cart.html" id="cart-link">Корзина (0)</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section>
+    <section class="hero">
+        <div class="container">
             <h2>Уходовая косметика для вашей кожи</h2>
-            <p>Откройте для себя лучшие средства по уходу за кожей</p>
+            <p>Откройте для себя лучшие средства по уходу за кожей, которые подарят вам сияние и здоровый вид</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="products-section">
+            <h2 class="section-title">Популярные товары</h2>
+            <div class="products-grid">
+                <!-- Товары будут добавлены далее -->
+            </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 PinkApple. Все права защищены.</p>
+        </div>
+    </footer>
 </body>
 </html>
