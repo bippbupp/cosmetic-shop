@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PinkApple - Магазин косметики</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="header">
@@ -17,50 +17,111 @@
         </div>
     </header>
 
-    <main class="main"></main>
-    <section class="hero">
-        <div class="container">
-            <h2>Уходовая косметика для вашей кожи</h2>
-            <p>Откройте для себя лучшие средства по уходу за кожей, которые подарят вам сияние и здоровый вид</p>
-        </div>
-    </section>
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h2>Уходовая косметика для вашей кожи</h2>
+                <p>Откройте для себя лучшие средства по уходу за кожей, которые подарят вам сияние и здоровый вид</p>
+            </div>
+        </section>
 
-    <section class="products-section">
-        <div class="container">
-            <h2 class="section-title">Популярные товары</h2>
-            <div class="products-grid">
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="images/cream.jpg" alt="Увлажняющий крем для лица">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Увлажняющий крем для лица</h3>
-                        <p class="product-description">Насыщенный крем с гиалуроновой кислотой для глубокого увлажнения</p>
-                        <p class="product-price">4 250 руб.</p>
-                        <button class="add-to-cart" data-id="1" data-name="Увлажняющий крем для лица" data-price="4250">
-                            Добавить в корзину
-                        </button>
-                    </div>
-                </article>
+        <section class="products-section">
+            <div class="container">
+                <h2 class="section-title">Популярные товары</h2>
+                <div class="products-grid">
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/cream.jpg" alt="Увлажняющий крем для лица">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Увлажняющий крем для лица</h3>
+                            <p class="product-description">Насыщенный крем с гиалуроновой кислотой для глубокого увлажнения</p>
+                            <p class="product-price">4 250 руб.</p>
+                            <button class="add-to-cart" data-id="1" data-name="Увлажняющий крем для лица" data-price="4250">
+                                Добавить в корзину
+                            </button>
+                        </div>
+                    </article>
 
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="images/foam.jpg" alt="Очищающая пенка">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Очищающая пенка</h3>
-                        <p class="product-description">Нежная пенка для очищения кожи без стягивания</p>
-                        <p class="product-price">3 890 руб.</p>
-                        <button class="add-to-cart" data-id="2" data-name="Очищающая пенка" data-price="3890">
-                            Добавить в корзину
-                        </button>
-                    </div>
-                </article>
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/foam.jpg" alt="Очищающая пенка">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Очищающая пенка</h3>
+                            <p class="product-description">Нежная пенка для очищения кожи без стягивания</p>
+                            <p class="product-price">3 890 руб.</p>
+                            <button class="add-to-cart" data-id="2" data-name="Очищающая пенка" data-price="3890">
+                                Добавить в корзину
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/serum.jpg" alt="Сыворотка с витамином C">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Сыворотка с витамином C</h3>
+                            <p class="product-description">Антивозрастная сыворотка для сияния кожи</p>
+                            <p class="product-price">5 100 руб.</p>
+                            <button class="add-to-cart" data-id="3" data-name="Сыворотка с витамином C" data-price="5100">
+                                Добавить в корзину
+                            </button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/mask.jpg" alt="Тонизирующая маска">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Тонизирующая маска</h3>
+                            <p class="product-description">Очищающая и тонизирующая маска для свежести кожи</p>
+                            <p class="product-price">1 500 руб.</p>
+                            <button class="add-to-cart" data-id="4" data-name="Тонизирующая маска" data-price="1500">
+                                Добавить в корзину
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/lipbalm.jpg" alt="Бальзам для губ">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Бальзам для губ</h3>
+                            <p class="product-description">Питательный бальзам с маслом ши и витамином E</p>
+                            <p class="product-price">450 руб.</p>
+                            <button class="add-to-cart" data-id="5" data-name="Бальзам для губ" data-price="450">
+                                Добавить в корзину
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/water.jpg" alt="Мицеллярная вода">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Мицеллярная вода</h3>
+                            <p class="product-description">Нежная мицеллярная вода для снятия макияжа</p>
+                            <p class="product-price">1 750 руб.</p>
+                            <button class="add-to-cart" data-id="6" data-name="Мицеллярная вода" data-price="1750">
+                                Добавить в корзину
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 PinkApple. Все права защищены.</p>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
