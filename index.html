@@ -9,7 +9,7 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo">PinkApple</div>
+            <h1 class="logo">PinkApple</h1>
             <nav class="nav">
                 <a href="index.html">Главная</a>
                 <a href="cart.html" id="cart-link">Корзина (0)</a>
@@ -17,6 +17,7 @@
         </div>
     </header>
 
+    <main class="main"></main>
     <section class="hero">
         <div class="container">
             <h2>Уходовая косметика для вашей кожи</h2>
@@ -24,14 +25,37 @@
         </div>
     </section>
 
-    <main class="container">
-        <section class="products-section">
+    <section class="products-section">
+        <div class="container">
             <h2 class="section-title">Популярные товары</h2>
             <div class="products-grid">
-                <!-- Товары будут добавлены далее -->
-            </div>
-        </section>
-    </main>
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="images/cream.jpg" alt="Увлажняющий крем для лица">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Увлажняющий крем для лица</h3>
+                        <p class="product-description">Насыщенный крем с гиалуроновой кислотой для глубокого увлажнения</p>
+                        <p class="product-price">4 250 руб.</p>
+                        <button class="add-to-cart" data-id="1" data-name="Увлажняющий крем для лица" data-price="4250">
+                            Добавить в корзину
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="images/foam.jpg" alt="Очищающая пенка">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Очищающая пенка</h3>
+                        <p class="product-description">Нежная пенка для очищения кожи без стягивания</p>
+                        <p class="product-price">3 890 руб.</p>
+                        <button class="add-to-cart" data-id="2" data-name="Очищающая пенка" data-price="3890">
+                            Добавить в корзину
+                        </button>
+                    </div>
+                </article>
 
     <footer class="footer">
         <div class="container">
