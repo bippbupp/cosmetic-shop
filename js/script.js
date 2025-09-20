@@ -29,3 +29,22 @@ function updateCartCounter() {
         cartLink.textContent = 'Корзина (' + totalItems + ')';
     }
 }
+
+function addCartEventListeners() {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            const productName = this.getAttribute('data-name');
+            const productPrice = parseInt(this.getAttribute('data-price'));
+            
+            addToCart(productId, productName, productPrice);
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    addCartEventListeners();
+    updateCartCounter();
+});
