@@ -332,3 +332,65 @@ body {
     color: #888;
     font-style: italic;
 }
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification-content {
+    background: linear-gradient(135deg, #ff9eb5 0%, #ff85a1 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(255, 158, 181, 0.3);
+    font-weight: 500;
+}
+
+.order-success {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(255, 158, 181, 0.2);
+    border: 2px solid #ff9eb5;
+}
+
+.order-success h3 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.order-success p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.btn-continue {
+    background: linear-gradient(135deg, #ff9eb5 0%, #ff85a1 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-continue:hover {
+    background: linear-gradient(135deg, #ff85a1 0%, #ff6b95 100%);
+    transform: translateY(-2px);
+}
