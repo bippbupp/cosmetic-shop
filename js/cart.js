@@ -90,3 +90,13 @@ function removeFromCart(productId) {
     updateCartCounter();
     renderCart();
 }
+
+function updateCartCounter() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    
+    const cartLinks = document.querySelectorAll('#cart-link');
+    cartLinks.forEach(link => {
+        link.textContent = `Корзина (${totalItems})`;
+    });
+}
