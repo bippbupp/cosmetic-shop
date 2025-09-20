@@ -77,18 +77,28 @@ function updateQuantity(productId, change) {
         }
         
         localStorage.setItem('cart', JSON.stringify(cart));
+        
         updateCartCounter();
-        renderCart();
+        renderCart(); 
+        
+        showNotification(change > 0 ? 'Количество товара увеличено' : 'Количество товара уменьшено');
     }
 }
 
 function removeFromCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    const item = cart.find(item => item.id == productId);
+    const itemName = item ? item.name : 'Товар';
+    
     cart = cart.filter(item => item.id != productId);
     
     localStorage.setItem('cart', JSON.stringify(cart));
+    
     updateCartCounter();
     renderCart();
+    
+    showNotification(`${itemName} удален из корзины`);
 }
 
 function updateCartCounter() {
@@ -99,4 +109,29 @@ function updateCartCounter() {
     cartLinks.forEach(link => {
         link.textContent = `Корзина (${totalItems})`;
     });
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span>${message}</span>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
 }
