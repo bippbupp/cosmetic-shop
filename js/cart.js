@@ -191,3 +191,28 @@ function submitOrder(event) {
 function continueShopping() {
     window.location.href = 'index.html';
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const orderBtn = document.getElementById('order-btn');
+    if (orderBtn) {
+        orderBtn.addEventListener('click', handleOrder);
+    }
+    
+    const cancelBtn = document.getElementById('cancel-btn');
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', cancelOrder);
+    }
+    
+    const orderForm = document.getElementById('order-form');
+    if (orderForm) {
+        orderForm.addEventListener('submit', submitOrder);
+    }
+    
+    const continueBtn = document.getElementById('continue-btn');
+    if (continueBtn) {
+        continueBtn.addEventListener('click', continueShopping);
+    }
+    
+    renderCart();
+    updateCartCounter();
+});
