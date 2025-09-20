@@ -156,7 +156,6 @@ body {
 
 .cart-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
     gap: 30px;
     margin-bottom: 40px;
 }
