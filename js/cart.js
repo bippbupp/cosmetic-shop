@@ -104,8 +104,7 @@ function removeFromCart(productId) {
 function updateCartCounter() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    
-    const cartLinks = document.querySelectorAll('#cart-link');
+    const cartLinks = document.querySelectorAll('#cart-link, .cart-link');
     cartLinks.forEach(link => {
         link.textContent = `Корзина (${totalItems})`;
     });
@@ -147,6 +146,7 @@ function handleOrder() {
     const orderForm = document.getElementById('order-form-container');
     if (orderForm) {
         orderForm.style.display = 'block';
+        orderForm.scrollIntoView({ behavior: 'smooth' });
     }
 }
 
@@ -170,6 +170,12 @@ function submitOrder(event) {
         return;
     }
     
+    const phoneRegex = /^[\+]?[0-9\s\-\(\)]+$/;
+    if (!phoneRegex.test(phone)) {
+        showNotification('Пожалуйста, введите корректный номер телефона!');
+        return;
+    }
+    
     localStorage.removeItem('cart');
     updateCartCounter();
     
@@ -183,9 +189,12 @@ function submitOrder(event) {
     const orderSuccess = document.getElementById('order-success');
     if (orderSuccess) {
         orderSuccess.style.display = 'block';
+        orderSuccess.scrollIntoView({ behavior: 'smooth' });
     }
     
     renderCart();
+    
+    showNotification('Заказ успешно создан!');
 }
 
 function continueShopping() {
