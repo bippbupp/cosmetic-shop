@@ -17,6 +17,7 @@ body {
     margin: 0 auto;
     padding: 0 15px;
 }
+
 .header {
     background-color: #ff9eb5;
     color: white;
@@ -44,4 +45,23 @@ body {
 
 .nav a:hover {
     text-decoration: underline;
+}
+
+.hero {
+    background-color: #ffe6ec;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ff6b95;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
 }
