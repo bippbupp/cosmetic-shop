@@ -132,3 +132,24 @@ body {
     font-size: 20px;
     margin-bottom: 15px;
 }
+
+
+.add-to-cart {
+    background-color: #ff9eb5;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #ff7a9a;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
