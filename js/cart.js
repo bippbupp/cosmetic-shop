@@ -41,3 +41,52 @@ function renderCart() {
     
     document.getElementById('total-price').textContent = totalPrice;
 }
+
+function addCartItemEventListeners() {
+    document.querySelectorAll('.decrease').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            updateQuantity(productId, -1);
+        });
+    });
+    
+    document.querySelectorAll('.increase').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            updateQuantity(productId, 1);
+        });
+    });
+    
+    document.querySelectorAll('.remove-from-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            removeFromCart(productId);
+        });
+    });
+}
+
+function updateQuantity(productId, change) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const itemIndex = cart.findIndex(item => item.id == productId);
+    
+    if (itemIndex !== -1) {
+        cart[itemIndex].quantity += change;
+        
+        if (cart[itemIndex].quantity <= 0) {
+            cart.splice(itemIndex, 1);
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCounter();
+        renderCart();
+    }
+}
+
+function removeFromCart(productId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(item => item.id != productId);
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCounter();
+    renderCart();
+}
