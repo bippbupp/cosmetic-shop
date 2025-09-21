@@ -18,7 +18,7 @@ function addToCart(productId, productName, productPrice) {
     
     updateCartCounter();
     
-    showNotification('Товар добавлен в корзину!');
+    showNotification('Товар добавлен в корзину! Нажмите чтобы перейти →', true);
 }
 
 function updateCartCounter() {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartCounter();
 });
 
-function showNotification(message) {
+function showNotification(message, redirectToCart = false) {
     const notification = document.createElement('div');
     notification.className = 'notification';
     notification.innerHTML = `
@@ -59,6 +59,13 @@ function showNotification(message) {
             <span>${message}</span>
         </div>
     `;
+    
+    if (redirectToCart) {
+        notification.style.cursor = 'pointer';
+        notification.addEventListener('click', function() {
+            window.location.href = 'cart.html';
+        });
+    }
     
     document.body.appendChild(notification);
     
