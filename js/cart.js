@@ -6,10 +6,10 @@ function renderCart() {
     const emptyCart = document.getElementById('empty-cart');
     
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    console.log('Товаров в корзине:', cart.length);
+    // console.log('Товаров в корзине:', cart.length);
     
     if (!cartItemsContainer) {
-        console.error('Элемент cart-items не найден');
+        // console.error('Элемент cart-items не найден');
         return;
     }
     
@@ -56,12 +56,12 @@ function renderCart() {
 }
 
 function addCartItemEventListeners() {
-    console.log('addCartItemEventListeners вызвана');
+    // console.log('addCartItemEventListeners вызвана');
     
     document.querySelectorAll('.decrease').forEach(button => {
         button.addEventListener('click', function() {
             const productId = this.getAttribute('data-id');
-            console.log('Уменьшение товара ID:', productId);
+            // console.log('Уменьшение товара ID:', productId);
             updateQuantity(productId, -1);
         });
     });
@@ -69,7 +69,7 @@ function addCartItemEventListeners() {
     document.querySelectorAll('.increase').forEach(button => {
         button.addEventListener('click', function() {
             const productId = this.getAttribute('data-id');
-            console.log('Увеличение товара ID:', productId);
+            // console.log('Увеличение товара ID:', productId);
             updateQuantity(productId, 1);
         });
     });
@@ -77,7 +77,7 @@ function addCartItemEventListeners() {
     document.querySelectorAll('.remove-from-cart').forEach(button => {
         button.addEventListener('click', function() {
             const productId = this.getAttribute('data-id');
-            console.log('Удаление товара ID:', productId);
+            // console.log('Удаление товара ID:', productId);
             removeFromCart(productId);
         });
     });
@@ -220,7 +220,7 @@ function continueShopping() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Страница корзины загружена');
+    // console.log('Страница корзины загружена');
     
     const orderBtn = document.getElementById('order-btn');
     if (orderBtn) {
